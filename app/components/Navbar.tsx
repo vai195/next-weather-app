@@ -19,7 +19,7 @@ const Navbar = () => {
           <Button
             className='source-code flex items-center gag-2'
             onClick={() => {
-              router.push("https://github.com");
+              router.push("https://github.com/vai195/next-weather-app");
             }}>
             {github} Source Code
           </Button>

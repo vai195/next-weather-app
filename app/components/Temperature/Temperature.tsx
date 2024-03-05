@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -20,6 +21,7 @@ const Temperature = () => {
 
   const [localtime, setLocalTime] = useState<string>("");
   const [currentDay, setCurrentDay] = useState<string>("");
+
   useEffect(() => {
     //update time
     const interval = setInterval(() => {
@@ -31,12 +33,13 @@ const Temperature = () => {
       setLocalTime(formatTime);
       setCurrentDay(day);
     }, 1000);
+    return () => clearInterval(interval);
   }, [timezone]);
+  // console.log(localtime);
+  // console.log(currentDay);
   if (!forecast || !weather) {
     return <div>Loading...</div>;
   }
-  // console.log(localtime);
-  // console.log(currentDay);
 
   const temp = kelvinToFarenheit(main?.temp);
   const mintemp = kelvinToFarenheit(main?.temp_min);

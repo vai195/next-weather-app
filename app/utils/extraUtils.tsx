@@ -1,5 +1,28 @@
+import moment from "moment";
+
 export const kelvinToFarenheit = (kelvin: number) => {
   return Math.round((kelvin - 273.15) * (9 / 5) + 32);
+};
+
+export const unixToTime = (unix: number, timezone: number) => {
+  return moment
+    .unix(unix)
+    .utcOffset(timezone / 60)
+    .format("HH:mm");
+};
+
+export const unixToDay = (unix: number) => {
+  return moment.unix(unix).format("ddd");
+};
+
+export const formatNumber = (number: number) => {
+  if (number >= 1000000) {
+    return (number / 1000000).toFixed(1) + "M";
+  } else if (number >= 1000) {
+    return (number / 1000).toFixed(1) + "K";
+  } else {
+    return number;
+  }
 };
 
 export const airQualityIndexText = [

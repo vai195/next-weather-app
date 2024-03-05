@@ -74,6 +74,23 @@
     @apply bg-background text-foreground;
   }
 }
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1d1c1c;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .progress-aq {
   background: linear-gradient(
     90deg,
@@ -84,4 +101,43 @@
     rgba(180, 96, 231, 1) 80%,
     rgba(178, 34, 34, 1) 100%
   );
+}
+
+.temperature {
+  background-image: linear-gradient(
+    to right,
+    #00dfff 0%,
+    #00f9ff 20%,
+    yellow,
+    red
+  );
+}
+
+@media screen and (max-width: 581px) {
+  .btns {
+    position: fixed;
+    bottom: 2%;
+    right: 1rem;
+    z-index: 1000;
+  }
+
+  .btns button {
+    box-shadow: 2px 3px 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
+  }
+
+  .search-div {
+    width: 100%;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  .search-btn button {
+    width: 100%;
+  }
+
+  .source-code {
+    order: -1;
+  }
 }
