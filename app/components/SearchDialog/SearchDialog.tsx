@@ -18,9 +18,14 @@ const SearchDialog = () => {
     setActiveCityCoords([lat, lon]);
   };
 
+  //open={openSearchDialog} onOpenChange={setSearchDialog}
+
   const [openSearchDialog, setSearchDialog] = useState(false);
 
   useEffect(() => {
+    if (typeof window === undefined) {
+      return;
+    }
     const handleKeyDown = (event: any) => {
       if ((event.metaKey || event.ctrlKey) && event.key === "f") {
         event.preventDefault();

@@ -19,6 +19,7 @@ import {
   useGlobalContextUpdate,
 } from "./context/globalContext";
 import MapCities from "./components/MapCities/MapCities";
+import { ClientComponent } from "./components/ClientComponent/ClientComponent";
 
 export default function Home() {
   return (
@@ -43,7 +44,7 @@ export default function Home() {
             <Pressure />
           </div>
           <div className='mapbox-con mt-4 flex gap-4'>
-            <Mapbox />
+            <ClientComponent />
             <MapCities />
           </div>
         </div>
